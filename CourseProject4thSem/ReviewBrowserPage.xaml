@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseProject4thSem.ReviewBrowserPage"
+             BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Image
+                Source="logo.png" 
+                HeightRequest="100"
+                WidthRequest="100"
+                VerticalOptions="Center"
+                />
+            <Label
+                Text="Отзывы"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"
+                FontSize="30"
+                />
+            <BoxView HeightRequest="2" Color="#7BC5DE" HorizontalOptions="FillAndExpand" />
+            <CollectionView x:Name="ReviewsCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding ReviewAuthorName}" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewAuthorSurname}" FontAttributes="Italic" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Оценка:" FontAttributes="Bold" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewRating}" FontAttributes="Bold"/>
+                                </HorizontalStackLayout>
+                                <Label Text="Текст отзыва:" Margin="0,0,5,0"/>
+                                <Label Text="{Binding ReviewText}"/>
+                            <BoxView HeightRequest="2" Color="#7BC5DE" HorizontalOptions="FillAndExpand" />
+                            </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button 
+                x:Name="ExitButton"
+                Text="Выход" 
+                BackgroundColor="#7BC5DE"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Clicked="ExitButton_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

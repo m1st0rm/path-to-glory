@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseProject4thSem.LessonPage"
+             BackgroundColor="White">
+    <ScrollView>
+        <StackLayout>
+            <Image
+             x:Name="LessonImage"
+             Source="logo.png"
+             HeightRequest="480"
+             WidthRequest="640"/>
+            <Label
+             x:Name="LessonArticleLabel"
+             Text =""
+             FontSize="18"/>
+            <Button
+             x:Name="ExitButton"
+             BackgroundColor="#7BC5DE"
+             Text="Выход"
+             Clicked="ExitButton_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseProject4thSem.MainPage"
+             BackgroundColor="White">
+    <Grid 
+        ColumnDefinitions="*,*"
+        RowDefinitions="*,*,*,*,*,*,*,*">
+        <Image
+            Source="logo.png" 
+            HeightRequest="100"
+            WidthRequest="100"
+            Grid.Column="0"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            VerticalOptions="Start"
+            />
+        <Label
+            x:Name="HelloLabel"
+            Text="Добро пожаловать, "
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "30"
+            Grid.Column="0"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            />
+        <Label
+            Text="Выберите курс для изучения :"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.Row="2" 
+            />
+        <Picker x:Name="CoursePicker" 
+                Grid.Column="1"
+                Grid.Row ="2"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Margin="10,0,0,0"
+                HeightRequest="45"
+                WidthRequest="400"
+                ItemDisplayBinding="{Binding CourseName}"
+                ItemsSource="{Binding Courses}"
+                SelectedIndexChanged="CoursePicker_SelectedIndexChanged"/>
+        <Label
+            x:Name="CourseInfoLabel"
+            Text=""
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "14"
+            Grid.Column="0"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"/>
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="EnterCourseButton"
+            Text="Перейти к курсу"
+            VerticalOptions="Center"
+            Grid.Column="0"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="EnterCourseButton_Clicked"/>
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="StatsButton"
+            Text="Персональная статистика"
+            VerticalOptions="Center"
+            Grid.Column="0"
+            Grid.Row="5"
+            Grid.ColumnSpan="2"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="StatsButton_Clicked"/>
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="CreateReviewButton"
+            Text="Оставить отзыв"
+            VerticalOptions="Center"
+            Grid.Column="0"
+            Grid.Row="6"
+            Grid.ColumnSpan="2"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="CreateReviewButton_Clicked"/>
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="ExitButton"
+            Text="Выход"
+            VerticalOptions="Center"
+            Grid.Column="0"
+            Grid.Row="7"
+            Grid.ColumnSpan="2"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="ExitButton_Clicked"/>
+
+    </Grid>
+</ContentPage>

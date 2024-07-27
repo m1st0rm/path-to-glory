@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseProject4thSem.TestPage"
+             BackgroundColor="White">
+    <Grid ColumnDefinitions="*" RowDefinitions="*,*,*,*,*,*,*,*">
+        <Image
+            Source="logo.png" 
+            HeightRequest="100"
+            WidthRequest="100"
+            Grid.Column="0"
+            Grid.Row="0"
+            />
+        <Label
+            x:Name="QuestionLabel"
+            Text=""
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "25"
+            Grid.Column="0"
+            Grid.Row="1"
+            />
+        <Label
+            x:Name="S1Label"
+            Text="1. "
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "18"
+            Grid.Column="0"
+            Grid.Row="2"
+            />
+        <Label
+            x:Name="S2Label"
+            Text="2. "
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "18"
+            Grid.Column="0"
+            Grid.Row="3"
+            />
+        <Label
+            x:Name="S3Label"
+            Text="3. "
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "18"
+            Grid.Column="0"
+            Grid.Row="4"
+            />
+        <Label
+            x:Name="S4Label"
+            Text="4. "
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "18"
+            Grid.Column="0"
+            Grid.Row="5"
+            />
+        <Entry
+            x:Name="AnswerEntry"
+            FontSize="18"
+            Grid.Column="0"
+            Grid.Row="6"
+            HeightRequest="50"
+            WidthRequest="250"
+            TextChanged="AnswerEntry_TextChanged"/>
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="SubmitButton"
+            Text="Ответить"
+            Grid.Column="0"
+            Grid.Row="7"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="SubmitButton_Clicked"
+            />
+
+    </Grid>
+</ContentPage>

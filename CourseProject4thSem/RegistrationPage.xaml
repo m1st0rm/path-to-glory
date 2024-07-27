@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseProject4thSem.RegistrationPage"
+             BackgroundColor="White">
+    <Grid
+        RowDefinitions="*,*,*,*,*,*,*,*"
+        ColumnDefinitions="*,*,*,*">
+        <Image
+            Source="logo.png" 
+            HeightRequest="100"
+            WidthRequest="100"
+            Grid.Column="0"
+            Grid.Row="0"
+            Grid.ColumnSpan="4"
+            VerticalOptions="Start"
+            />
+        <Label
+            Text="Регистрация в PathToGlory"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "30"
+            Grid.Column="0"
+            Grid.Row="1"
+            Grid.ColumnSpan="4"
+            />
+        <Label
+            Text="Введите имя :"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.Row="2" 
+            Margin="0,0,50,0"
+            />
+        <Entry
+            x:Name="NameEntry"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            HeightRequest="50"
+            WidthRequest="250"
+            Grid.Column="1"
+            Grid.Row="2"
+            Margin="0,0,50,0"
+            />
+        <Label
+            Text="Введите фамилию :"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.Row="3" 
+            Margin="0,0,50,0"
+            />
+        <Entry
+            x:Name="SurnameEntry"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            HeightRequest="50"
+            WidthRequest="250"
+            Grid.Column="1"
+            Grid.Row="3"
+            Margin="0,0,50,0"
+            />
+        <Label
+            Text="Введите отчество :"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.Row="4" 
+            Margin="0,0,50,0"
+            />
+        <Entry
+            x:Name="PatronymicEntry"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            HeightRequest="50"
+            WidthRequest="250"
+            Grid.Column="1"
+            Grid.Row="4"
+            Margin="0,0,50,0"
+            />
+        <Label
+            Text="Введите логин :"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "20"
+            Grid.Column="2"
+            Grid.Row="2" 
+            Margin="0,0,50,0"
+            />
+        <Entry
+            x:Name="LoginEntry"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            HeightRequest="50"
+            WidthRequest="250"
+            Grid.Column="3"
+            Grid.Row="2"
+            Margin="0,0,50,0"
+            />
+        <Label
+            Text="Введите пароль :"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "20"
+            Grid.Column="2"
+            Grid.Row="3" 
+            Margin="0,0,50,0"
+            />
+        <Entry
+            x:Name="PasswordEntry"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            HeightRequest="50"
+            WidthRequest="250"
+            Grid.Column="3"
+            Grid.Row="3"
+            Margin="0,0,50,0"
+            IsPassword="True"
+            />
+        <Label
+            Text="Подтвердите пароль :"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "20"
+            Grid.Column="2"
+            Grid.Row="4" 
+            Margin="0,0,50,0"
+            />
+        <Entry
+            x:Name="PasswordConfirmEntry"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            HeightRequest="50"
+            WidthRequest="250"
+            Grid.Column="3"
+            Grid.Row="4"
+            Margin="0,0,50,0"
+            IsPassword="True"
+            />
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="RegistryButton"
+            Text="Зарегистрироваться"
+            VerticalOptions="Center"
+            Grid.Column="0"
+            Grid.Row="5"
+            Grid.ColumnSpan="4"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="RegistryButton_Clicked"
+            />
+        <Label
+            Text="Уже есть учётная запись PathToGlory? Авторизуйтесь :"
+            VerticalOptions="End"
+            HorizontalOptions="Center"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            Grid.ColumnSpan="4"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.Row="6" 
+            />
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="SingInButton"
+            Text="Войти"
+            VerticalOptions="Center"
+            Grid.Column="0"
+            Grid.Row="7"
+            Grid.ColumnSpan="4"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="SingInButton_Clicked"
+            />
+    </Grid>
+</ContentPage>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseProject4thSem.ReviewCreatingPage"
+             BackgroundColor="White">
+    <Grid
+        ColumnDefinitions="*,*"
+        RowDefinitions="*,*,*,*,*,*,*,*">
+        <Image
+            Source="logo.png" 
+            HeightRequest="100"
+            WidthRequest="100"
+            Grid.Column="0"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            VerticalOptions="Start"
+            />
+        <Label 
+            Text="Форма создания отзыва"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize="30"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"/>
+        <Label
+            x:Name ="MarkLabel"
+            Text="Текущая оценка: 5 Баллов"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize="20"
+            Grid.Row="2"
+            Grid.Column="0"/>
+        <Slider
+            x:Name="MarkSlider"
+            Minimum="1"
+            Maximum="5"
+            Value="5"
+            HeightRequest="35"
+            WidthRequest="400"
+            VerticalOptions="Start"
+            HorizontalOptions="Center"
+            Grid.Row="2"
+            Grid.Column="1"
+            ThumbColor ="#7BC5DE"
+            MinimumTrackColor="#7BC5DE"
+            ValueChanged="Slider_ValueChanged"/>
+        <Label 
+            Text="Текст отзыва:"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize="20"
+            Grid.Row="3"
+            Grid.Column="0"/>
+        <Editor
+            x:Name="TextEditor"
+            Placeholder="Текст вашего отзыва ..."
+            VerticalOptions="Start" 
+            HorizontalOptions="Center"
+            HeightRequest="200"
+            WidthRequest="600"
+            Grid.Row="3"
+            Grid.Column="1"/>
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="SubmitButton"
+            Text="Отправить отзыв"
+            VerticalOptions="Start"
+            Grid.Column="0"
+            Grid.Row="6"
+            Grid.ColumnSpan="2"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="SubmitButton_Clicked"
+            />
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="ExitButton"
+            Text="Выход"
+            VerticalOptions="Start"
+            Grid.Column="0"
+            Grid.Row="7"
+            Grid.ColumnSpan="2"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="ExitButton_Clicked"
+            /> 
+
+    </Grid>
+</ContentPage>

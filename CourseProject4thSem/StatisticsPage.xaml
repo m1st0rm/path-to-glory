@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseProject4thSem.StatisticsPage"
+             BackgroundColor="White">
+
+    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*,*">
+        <Image
+            Source="logo.png" 
+            HeightRequest="100"
+            WidthRequest="100"
+            Grid.Column="0"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            />
+        <Label
+            Text="Персональная статистика"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize = "30"
+            Grid.Column="0"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            />
+        <Label
+            x:Name="TestsPassed_Label"
+            Text=""
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.Row="2"
+            />
+        <Label
+            x:Name="CorrectAnswersPecentage_Label"
+            Text=""
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize = "20"
+            Grid.Column="1"
+            Grid.Row="2"
+            />
+        <Label
+            x:Name="CorrectAnswers_Label"
+            Text=""
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.Row="3"
+            />
+        <Label
+            x:Name="IncorrectAnswers_Label"
+            Text=""
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize = "20"
+            Grid.Column="1"
+            Grid.Row="3"
+            />
+        <Label
+            x:Name="Warnings_Label"
+            Text=""
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            />
+        <Button 
+            x:Name="ExitButton"
+            Text="Выход" 
+            BackgroundColor="#7BC5DE"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Clicked="ExitButton_Clicked" />
+    </Grid>
+
+</ContentPage>

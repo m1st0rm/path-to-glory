@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseProject4thSem.AdminPage"
+             BackgroundColor="White">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ScrollView Grid.Column="0">
+            <VerticalStackLayout>
+                <BoxView HeightRequest="6" Color="Coral" HorizontalOptions="FillAndExpand" />
+                <Label Text="Непроверенные отзывы" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="30" />
+                <BoxView HeightRequest="2" Color="Coral" HorizontalOptions="FillAndExpand" />
+                <CollectionView x:Name="UnconfirmedReviewsCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="ID отзыва:" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewID}" FontAttributes="Italic" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Автор:" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewAuthorName}" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewAuthorSurname}" FontAttributes="Italic" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="ID автора:" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewAuthorID}" FontAttributes="Italic" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Оценка:" FontAttributes="Bold" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewRating}" FontAttributes="Bold"/>
+                                </HorizontalStackLayout>
+                                <Label Text="Текст отзыва:"/>
+                                <Label Text="{Binding ReviewText}" LineBreakMode="WordWrap"/>
+                                <BoxView HeightRequest="2" Color="Coral" HorizontalOptions="FillAndExpand" />
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Entry 
+                    x:Name="UnconfirmedEntry"
+                    Placeholder="ID отзыва" 
+                    TextChanged="Entry_TextChanged"
+                    Margin="10,10,10,10"/>
+                <Button 
+                    x:Name="ConfirmButton"
+                    Text="Опубликовать отзыв" 
+                    BackgroundColor="Coral"
+                    HorizontalOptions="Center"
+                    Margin="10,10,10,10"
+                    Clicked="ConfirmButton_Clicked" />
+                <Button 
+                    x:Name="DeleteUnconfirmedButton"
+                    Text="Удалить отзыв" 
+                    BackgroundColor="Coral"
+                    HorizontalOptions="Center"
+                    Margin="10,10,10,10"
+                    Clicked="DeleteUnconfirmedButton_Clicked" />
+                <BoxView HeightRequest="6" Color="Coral" HorizontalOptions="FillAndExpand" />
+                <Label Text="Незаблокированные пользователи" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="30" />
+                <BoxView HeightRequest="2" Color="Coral" HorizontalOptions="FillAndExpand" />
+                <CollectionView x:Name="UnbannedUsersCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="ID пользователя:" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding UserID}" />
+                                </HorizontalStackLayout>
+                                <Label Text="Личные данные пользователя:" FontAttributes="Italic"/>
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding UserName}" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding UserSurname}" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding UserPatronymic}" FontAttributes="Italic"/>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Количество предупреждений пользователя:" FontAttributes="Bold" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding UserWarnings}" FontAttributes="Bold" />
+                                    <Label Text="/3 (не заблокирован)" FontAttributes="Bold"/>
+                                </HorizontalStackLayout>
+                                <BoxView HeightRequest="2" Color="Coral" HorizontalOptions="FillAndExpand" />
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Entry
+                    x:Name="UnbannedEntry" 
+                    Placeholder="ID пользователя" 
+                    TextChanged="Entry_TextChanged"
+                    Margin="10,10,10,10"/>
+                <Button 
+                    x:Name="WarnButton"
+                    Text="Выдать предупреждение" 
+                    BackgroundColor="Coral"
+                    HorizontalOptions="Center"
+                    Margin="10,10,10,10"
+                    Clicked="WarnButton_Clicked" />
+                <Button 
+                    x:Name="UnwarnButton"
+                    Text="Снять предупреждение" 
+                    BackgroundColor="Coral"
+                    HorizontalOptions="Center"
+                    Margin="10,10,10,10"
+                    Clicked="UnwarnButton_Clicked" />
+                <Button 
+                    x:Name="BanButton"
+                    Text="Выдать блокировку" 
+                    BackgroundColor="Coral"
+                    HorizontalOptions="Center"
+                    Margin="10,10,10,10"
+                    Clicked="BanButton_Clicked" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <ScrollView Grid.Column="1">
+            <VerticalStackLayout>
+                <BoxView HeightRequest="6" Color="Coral" HorizontalOptions="FillAndExpand" />
+                <Label Text="Проверенные отзывы" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="30" />
+                <BoxView HeightRequest="2" Color="Coral" HorizontalOptions="FillAndExpand" />
+                <CollectionView x:Name="ConfirmedReviewsCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="ID отзыва:" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewID}" FontAttributes="Italic" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Автор:" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewAuthorName}" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewAuthorSurname}" FontAttributes="Italic" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="ID автора:" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewAuthorID}" FontAttributes="Italic" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Оценка:" FontAttributes="Bold" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding ReviewRating}" FontAttributes="Bold"/>
+                                </HorizontalStackLayout>
+                                <Label Text="Текст отзыва:" Margin="0,0,5,0"/>
+                                <Label Text="{Binding ReviewText}"/>
+                                <BoxView HeightRequest="2" Color="Coral" HorizontalOptions="FillAndExpand" />
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Entry 
+                    x:Name="ConfirmedEntry" 
+                    Placeholder="ID отзыва" 
+                    TextChanged="Entry_TextChanged"
+                    Margin="10,10,10,10"/>
+                <Button 
+                    x:Name="DeleteConfirmedButton"
+                    Text="Удалить отзыв" 
+                    BackgroundColor="Coral"
+                    HorizontalOptions="Center"
+                    Margin="10,10,10,10"
+                    Clicked="DeleteConfirmedButton_Clicked" />
+                <BoxView HeightRequest="6" Color="Coral" HorizontalOptions="FillAndExpand" />
+                <Label Text="Заблокированные пользователи" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="30" />
+                <BoxView HeightRequest="2" Color="Coral" HorizontalOptions="FillAndExpand" />
+                <CollectionView x:Name="BannedUsersCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="ID пользователя:" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding UserID}" />
+                                </HorizontalStackLayout>
+                                <Label Text="Личные данные пользователя:" FontAttributes="Italic"/>
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding UserName}" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding UserSurname}" FontAttributes="Italic" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding UserPatronymic}" FontAttributes="Italic"/>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Количество предупреждений пользователя:" FontAttributes="Bold" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding UserWarnings}" FontAttributes="Bold" />
+                                    <Label Text="/3 (заблокирован)" FontAttributes="Bold"/>
+                                </HorizontalStackLayout>
+                                <BoxView HeightRequest="2" Color="Coral" HorizontalOptions="FillAndExpand" />
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Entry
+                    x:Name="BannedEntry" 
+                    Placeholder="ID пользователя" 
+                    TextChanged="Entry_TextChanged"
+                    Margin="10,10,10,10"/>
+                <Button 
+                    x:Name="UnbanButton"
+                    Text="Снять блокировку" 
+                    BackgroundColor="Coral"
+                    HorizontalOptions="Center"
+                    Margin="10,10,10,10"
+                    Clicked="UnbanButton_Clicked" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button x:Name="ExitButton" Text="Выход" BackgroundColor="Coral" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" Clicked="ExitButton_Clicked" />
+    </Grid>
+</ContentPage>

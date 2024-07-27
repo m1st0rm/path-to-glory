@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseProject4thSem.LoginPage"
+             BackgroundColor="White">
+
+    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*,*,*,*,*">
+        <Image
+            Source="logo.png" 
+            HeightRequest="100"
+            WidthRequest="100"
+            Grid.Column="0"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            />
+        <Label
+            Text="Добро пожаловать в PathToGlory!"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "30"
+            Grid.Column="0"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            />
+        <Label
+            Text="Введите логин :"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.Row="2" 
+            Margin="0,0,65,0"
+            />
+            <Entry
+            x:Name="LoginEntry"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            HeightRequest="50"
+            WidthRequest="250"
+            Grid.Column="1"
+            Grid.Row="2"
+            Margin="0,0,50,0"
+            />
+        <Label
+            Text="Введите пароль :"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            VerticalTextAlignment="Start"
+            HorizontalTextAlignment="Center"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.Row="3" 
+            Margin="0,0,50,0"
+            />
+        <Entry
+            x:Name="PasswordEntry"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            HeightRequest="50"
+            WidthRequest="250"
+            Grid.Column="1"
+            Grid.Row="3"
+            Margin="0,0,50,0" 
+            IsPassword="True"
+            />
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="LoginButton"
+            Text="Войти"
+            VerticalOptions="Start"
+            Grid.Column="0"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="LoginButton_Clicked"
+            />
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="ReviewsButton"
+            Text="Просмотреть отзывы о сервисе"
+            VerticalOptions="Start"
+            Grid.Column="0"
+            Grid.Row="5"
+            Grid.ColumnSpan="2"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="ReviewsButton_Clicked"
+            />
+        <Button 
+            BackgroundColor="Coral"
+            x:Name="AdminButton"
+            Text="Войти как администратор"
+            VerticalOptions="Start"
+            Grid.Column="0"
+            Grid.Row="6"
+            Grid.ColumnSpan="2"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="AdminButton_Clicked"
+            />
+        <Label
+            Text="Нет учётной записи PathToGlory? Зарегистрирутесь :"
+            VerticalOptions="End"
+            HorizontalOptions="Center"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            FontSize = "20"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="7" 
+            />
+        <Button 
+            BackgroundColor="#7BC5DE"
+            x:Name="SignUpButton"
+            Text="Зарегистрироваться"
+            VerticalOptions="Center"
+            Grid.Column="0"
+            Grid.Row="8"
+            Grid.ColumnSpan="2"
+            HeightRequest="35"
+            WidthRequest="500"
+            Clicked="SignUpButton_Clicked"
+            />
+
+    </Grid>
+
+</ContentPage>
